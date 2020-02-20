@@ -5,6 +5,7 @@
  */
 package simulacion;
 
+import generacion.CongruenciaLineal;
 import generacion.CuadradosMedios;
 import javax.swing.UIManager;
 
@@ -61,6 +62,11 @@ public class Main extends javax.swing.JFrame {
         jMenu2.setText("Generacion");
 
         jMenuItem2.setText("Congruencial Lineal");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem2);
 
         jMenuItem1.setText("Cuadrados Medios");
@@ -112,6 +118,11 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         new CuadradosMedios().setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        new CongruenciaLineal().setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
