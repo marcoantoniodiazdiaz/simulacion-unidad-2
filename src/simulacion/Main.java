@@ -5,8 +5,11 @@
  */
 package simulacion;
 
+import comprobacion.Comprobacion;
 import generacion.CongruenciaLineal;
 import generacion.CuadradosMedios;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.UIManager;
 
 /**
@@ -14,13 +17,19 @@ import javax.swing.UIManager;
  * @author sergioplascencia
  */
 public class Main extends javax.swing.JFrame {
+    
+    public static List<String> lista = new ArrayList<>();
 
     /**
      * Creates new form Main
      */
     public Main() {
         initComponents();
-        setLocationRelativeTo(null);
+    }
+    
+    private void onInit() {
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -42,7 +51,6 @@ public class Main extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,7 +61,15 @@ public class Main extends javax.swing.JFrame {
             new String [] {
                 "Numeros"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tablaNumeros);
 
         jMenu1.setText("File");
@@ -84,11 +100,13 @@ public class Main extends javax.swing.JFrame {
         jMenuItem4.setText("Chi-Cuadrada");
         jMenu3.add(jMenuItem4);
 
-        jMenuItem5.setText("Varianza");
+        jMenuItem5.setText("Media - Varianza");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem5);
-
-        jMenuItem6.setText("Media");
-        jMenu3.add(jMenuItem6);
 
         jMenuBar1.add(jMenu3);
 
@@ -123,6 +141,11 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         new CongruenciaLineal().setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        new Comprobacion().setVisible(true);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,7 +186,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JTable tablaNumeros;
     // End of variables declaration//GEN-END:variables

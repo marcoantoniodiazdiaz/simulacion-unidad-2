@@ -5,9 +5,6 @@
  */
 package generacion;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author sergioplascencia
@@ -25,6 +22,7 @@ public class CuadradosMedios extends javax.swing.JFrame {
     private void onInit() {
         setDefaultCloseOperation(HIDE_ON_CLOSE);
         setLocationRelativeTo(null);
+        btnGenerar.setEnabled(false);
     }
 
     /**
@@ -49,6 +47,11 @@ public class CuadradosMedios extends javax.swing.JFrame {
         jLabel2.setText("Semilla:");
 
         boxSemilla.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        boxSemilla.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                boxSemillaKeyReleased(evt);
+            }
+        });
 
         btnGenerar.setText("Generar");
         btnGenerar.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +96,18 @@ public class CuadradosMedios extends javax.swing.JFrame {
         CuadradosMediosControlador controller = new CuadradosMediosControlador();
         
         controller.generar(Double.parseDouble(boxSemilla.getText()));
+        this.hide();
     }//GEN-LAST:event_btnGenerarActionPerformed
+
+    private void boxSemillaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxSemillaKeyReleased
+        // TODO add your handling code here:
+        if (boxSemilla.getText().length() == 4) {
+            
+            btnGenerar.setEnabled(true);
+        } else {
+            btnGenerar.setEnabled(false);
+        }
+    }//GEN-LAST:event_boxSemillaKeyReleased
 
     /**
      * @param args the command line arguments

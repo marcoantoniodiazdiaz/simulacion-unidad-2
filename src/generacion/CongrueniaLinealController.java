@@ -24,25 +24,25 @@ public class CongrueniaLinealController {
             Double r = a*x + c;
             r = r % m;
             
-            r = Double.parseDouble(("" + r).substring(0, 5));
+            r = Double.parseDouble(("" + r).substring(0, 6));
+            // System.out.println(r);
             
             list.add(r);
 
             x = r;
         }
         
-        System.out.println(list.toString());
         
-//        DefaultTableModel model = (DefaultTableModel) Main.tablaNumeros.getModel();
-//        model.setRowCount(0);
-//        
-//        list.forEach((num) -> {
-//            String[] rows = new String[1];
-//            rows[0] = num.toString();
-//            model.addRow(rows);
-//        });
-//        
-//        Main.tablaNumeros.setModel(model);
+        DefaultTableModel model = (DefaultTableModel) Main.tablaNumeros.getModel();
+        model.setRowCount(0);
+        
+        list.forEach((num) -> {
+            String[] rows = new String[1];
+            rows[0] = num.toString();
+            model.addRow(rows);
+        });
+        
+        Main.tablaNumeros.setModel(model);
     }
     
 }

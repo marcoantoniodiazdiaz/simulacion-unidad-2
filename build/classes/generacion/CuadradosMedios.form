@@ -71,6 +71,9 @@
           <Font name="Lucida Grande" size="24" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxSemillaKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnGenerar">
       <Properties>
