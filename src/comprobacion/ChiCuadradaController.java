@@ -10,6 +10,7 @@
 package comprobacion;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import simulacion.Main;
@@ -30,7 +31,7 @@ public class ChiCuadradaController {
         Double amplitud = M / N;
         
         BigDecimal bigM = new BigDecimal(M);
-        int intervalos = bigM.intValue();
+        int intervalos = bigM.setScale(0, RoundingMode.UP).intValue();
         
         System.out.println(intervalos);
         
