@@ -26,7 +26,7 @@ public class CuadradosMediosControlador {
         
         Main.lista.removeAll(Main.lista);
         
-        for(int i = 0 ; i < 40 ; i ++) {
+        for(int i = 0 ; i < Main.numDatos ; i ++) {
             numero = Math.pow(numero, 2);
             String sNumero = String.format("%.12f", numero);
             sNumero = sNumero.substring(2, 6);

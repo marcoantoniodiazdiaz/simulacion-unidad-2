@@ -9,6 +9,7 @@
 
 package comprobacion;
 
+import java.math.BigDecimal;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import simulacion.Main;
@@ -19,15 +20,19 @@ import simulacion.Main;
  */
 public class ChiCuadradaController {
     
-    public void ejecutarComprobacion(Double N) {
+    public void ejecutarComprobacion() {
+        
+        Double N = (double) Main.numDatos;
         
         Double M = Math.sqrt(N);
         Double Ei = N / M;
         
-        // int intervalos = (int) ((M >= 0.5) ? Math.round(M)+1 : Math.round(M));
-        int intervalos = 6;
+        Double amplitud = M / N;
         
-        Double amplitud = (double) M / N;
+        BigDecimal bigM = new BigDecimal(M);
+        int intervalos = bigM.intValue();
+        
+        System.out.println(intervalos);
         
         Double intervalDown = 0.0;
         Double intervalUp = intervalDown + amplitud;
@@ -38,7 +43,7 @@ public class ChiCuadradaController {
         
         Double suma = 0.0;
         
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < intervalos; i++) {
             row[0] = intervalDown.toString();
             row[1] = intervalUp.toString();
             

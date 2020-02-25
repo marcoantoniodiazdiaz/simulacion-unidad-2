@@ -18,7 +18,7 @@ public class CongrueniaLinealController {
         
         Main.lista.removeAll(Main.lista);
         
-        for (int i = 0; i < 40; i++) {
+        for (int i = 0; i < Main.numDatos; i++) {
             Double r = a*x + c;
             r = r % m;
             

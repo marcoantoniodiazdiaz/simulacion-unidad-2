@@ -36,8 +36,6 @@ public class ChiCuadrada extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        boxN = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaChiCuadrada = new javax.swing.JTable();
         btnComprobar = new javax.swing.JButton();
@@ -46,10 +44,6 @@ public class ChiCuadrada extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         jLabel1.setText("Chi-Cuadrada");
-
-        jLabel2.setText("N:");
-
-        boxN.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
 
         tablaChiCuadrada.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -80,16 +74,8 @@ public class ChiCuadrada extends javax.swing.JFrame {
                         .addGap(0, 468, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(148, 148, 148)
-                                .addComponent(jLabel2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(boxN, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnComprobar)))))
+                        .addGap(62, 62, 62)
+                        .addComponent(btnComprobar)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -97,13 +83,9 @@ public class ChiCuadrada extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(7, 7, 7)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(boxN, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnComprobar))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -117,7 +99,7 @@ public class ChiCuadrada extends javax.swing.JFrame {
     private void btnComprobarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprobarActionPerformed
         // TODO add your handling code here:
         
-        chiCuadradaController.ejecutarComprobacion(Double.parseDouble(boxN.getText()));
+        chiCuadradaController.ejecutarComprobacion();
     }//GEN-LAST:event_btnComprobarActionPerformed
 
     /**
@@ -156,10 +138,8 @@ public class ChiCuadrada extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField boxN;
     private javax.swing.JButton btnComprobar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JTable tablaChiCuadrada;
     // End of variables declaration//GEN-END:variables

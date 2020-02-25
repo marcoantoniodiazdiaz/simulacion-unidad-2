@@ -25,7 +25,7 @@ public class MediaVarianzaController {
             suma += Double.parseDouble(n);
         }
         
-        return suma / 40;
+        return suma / Main.numDatos;
     }
     
     // ∑(xi-xm)²/(n-1)
@@ -34,7 +34,7 @@ public class MediaVarianzaController {
         Double suma = 0.0;
         Double xM = calcularMedia();
         
-        Double n = 40.0;
+        int n = Main.numDatos;
         
         for (String s : Main.lista) {
             suma += (Math.pow(Double.parseDouble(s) - xM, 2));

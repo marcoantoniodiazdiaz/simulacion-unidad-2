@@ -20,6 +20,7 @@ import javax.swing.UIManager;
 public class Main extends javax.swing.JFrame {
     
     public static List<String> lista = new ArrayList<>();
+    public static int numDatos = 40;
 
     /**
      * Creates new form Main
@@ -45,6 +46,8 @@ public class Main extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaNumeros = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        boxNumeroDeDatos = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -74,6 +77,15 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tablaNumeros);
+
+        jLabel1.setText("Numero de datos:");
+
+        boxNumeroDeDatos.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        boxNumeroDeDatos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                boxNumeroDeDatosKeyReleased(evt);
+            }
+        });
 
         jMenu1.setText("Archivo");
 
@@ -136,13 +148,23 @@ public class Main extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(394, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 276, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(boxNumeroDeDatos))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(boxNumeroDeDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -173,6 +195,11 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void boxNumeroDeDatosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxNumeroDeDatosKeyReleased
+        // TODO add your handling code here:
+        numDatos = Integer.parseInt(boxNumeroDeDatos.getText());
+    }//GEN-LAST:event_boxNumeroDeDatosKeyReleased
 
     /**
      * @param args the command line arguments
@@ -205,6 +232,8 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField boxNumeroDeDatos;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
