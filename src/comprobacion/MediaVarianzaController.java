@@ -41,7 +41,7 @@ public class MediaVarianzaController {
         }
         
         return suma / (n - 1);
-        
+       
     }
     
 }

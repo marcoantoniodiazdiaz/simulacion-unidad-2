@@ -5,6 +5,7 @@
  */
 package simulacion;
 
+import comprobacion.ChiCuadrada;
 import comprobacion.Comprobacion;
 import generacion.CongruenciaLineal;
 import generacion.CuadradosMedios;
@@ -25,6 +26,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        onInit();
     }
     
     private void onInit() {
@@ -98,6 +100,11 @@ public class Main extends javax.swing.JFrame {
         jMenu3.setText("Comprobacion");
 
         jMenuItem4.setText("Chi-Cuadrada");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem4);
 
         jMenuItem5.setText("Media - Varianza");
@@ -146,6 +153,11 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         new Comprobacion().setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        new ChiCuadrada().setVisible(true);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
