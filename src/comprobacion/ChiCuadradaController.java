@@ -72,8 +72,6 @@ public class ChiCuadradaController {
         }
         
         ChiCuadrada.tablaChiCuadrada.setModel(model);
-        
-        // model.setValueAt(Ei, 0, 3);
     }
 
 }

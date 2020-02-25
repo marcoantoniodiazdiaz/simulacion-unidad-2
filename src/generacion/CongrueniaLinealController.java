@@ -5,8 +5,6 @@
  */
 package generacion;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import simulacion.Main;
 
@@ -16,18 +14,17 @@ import simulacion.Main;
  */
 public class CongrueniaLinealController {
     
-    List<Double> list = new ArrayList<>();
-    
     public void execute(Double x, Double a, Double c, Double m) {
+        
+        Main.lista.removeAll(Main.lista);
         
         for (int i = 0; i < 40; i++) {
             Double r = a*x + c;
             r = r % m;
             
             r = Double.parseDouble(("" + r).substring(0, 6));
-            // System.out.println(r);
             
-            list.add(r);
+            Main.lista.add("" + r);
 
             x = r;
         }
@@ -36,7 +33,7 @@ public class CongrueniaLinealController {
         DefaultTableModel model = (DefaultTableModel) Main.tablaNumeros.getModel();
         model.setRowCount(0);
         
-        list.forEach((num) -> {
+        Main.lista.forEach((num) -> {
             String[] rows = new String[1];
             rows[0] = num.toString();
             model.addRow(rows);
