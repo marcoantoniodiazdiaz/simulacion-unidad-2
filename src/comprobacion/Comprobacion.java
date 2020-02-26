@@ -114,6 +114,8 @@ public class Comprobacion extends javax.swing.JFrame {
             BigDecimal bd = new BigDecimal(media);
             bd = bd.setScale(4, RoundingMode.HALF_UP);
             labelResultado.setText( "" + bd.doubleValue());
+            
+            
         } else {
             Double varianza = mediaVarianzaController.calcularVarianza();
             BigDecimal bd = new BigDecimal(varianza);
